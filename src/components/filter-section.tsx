@@ -69,7 +69,11 @@ export function FilterSection() {
                 label="Select city"
                 style={{ marginBottom: 8 }}
               >
-                <Select placeholder="Gwenborough" options={cityOptions} />
+                <Select
+                  placeholder="Gwenborough"
+                  options={cityOptions}
+                  allowClear
+                />
               </Form.Item>
             </Col>
             <Col span={24}>
@@ -78,7 +82,11 @@ export function FilterSection() {
                 label="Select company"
                 style={{ marginBottom: 16 }}
               >
-                <Select placeholder="Keebler LLC" options={companyOptions} />
+                <Select
+                  placeholder="Keebler LLC"
+                  options={companyOptions}
+                  allowClear
+                />
               </Form.Item>
             </Col>
             <Col span={24}>
