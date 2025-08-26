@@ -4,16 +4,15 @@ import { UserListSection } from "../components/user-list-section";
 import { useQuery } from "@tanstack/react-query";
 import type { UserResponse } from "../types/user";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 export function UserListScreen() {
   const [form] = Form.useForm();
   const { md, lg } = Grid.useBreakpoint();
 
   useQuery<UserResponse[]>({
     queryKey: ["users"],
-    queryFn: () =>
-      fetch("https://jsonplaceholder.typicode.com/users").then((res) =>
-        res.json()
-      ),
+    queryFn: () => fetch(`${apiUrl}/users`).then((res) => res.json()),
   });
 
   return (
